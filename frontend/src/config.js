@@ -1,7 +1,5 @@
 const config = {
-  apiUrl: process.env.NODE_ENV === 'production'
-    ? 'https://event-management-mern-stack-1.onrender.com'  // Your Render backend URL
-    : 'http://localhost:4000'  // Local development URL
+  apiUrl: import.meta.env.VITE_BACKEND_URL || 'https://event-management-backend-uejq.onrender.com'
 };
 
 export default config; 
