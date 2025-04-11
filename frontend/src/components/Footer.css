@@ -1,0 +1,72 @@
+footer {
+    background-color: #000;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  footer .banner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  footer .title h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  footer .title p {
+    font-family: 'Alex Brush', cursive;
+    font-size: 18px;
+    color: #d6a25d;
+    margin-bottom: 30px;
+  }
+  
+  footer .tag label {
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  footer .tag div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  footer .tag input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    width: 250px;
+    font-size: 16px;
+    outline: none;
+    background-color: #fff3e3;
+    color: #000;
+  }
+  
+  footer .tag button {
+    background-color: #fff3e3;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  footer .tag button:hover {
+    background-color: #d6a25d;
+    color: #fff;
+  }
+  
+  footer .tag p {
+    font-size: 14px;
+    margin-top: 0;
+    color: #fff;
+  }
+  
