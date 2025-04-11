@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css';
+import config from '../config';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +33,7 @@ const Contact = () => {
     try {
       console.log('Sending message data:', formData);
       
-      const response = await fetch('https://event-management-mern-stack-1.onrender.com/api/v1/message', {
+      const response = await fetch(`${config.apiUrl}/api/v1/message`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
