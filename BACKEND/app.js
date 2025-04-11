@@ -13,7 +13,10 @@ const corsOptions = {
     'http://localhost:5173',
     'http://localhost:3000',
     'https://event-management-mern-stack-gjahnavir.vercel.app',
-    'https://event-management-mern-stack.vercel.app'
+    'https://event-management-mern-stack.vercel.app',
+    'https://event-management-mern-stack-git-main-gjahnavir.vercel.app',
+    'https://event-management-mern-stack-gjahnavir.vercel.app',
+    'https://event-management-mern-stack-1.vercel.app'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
