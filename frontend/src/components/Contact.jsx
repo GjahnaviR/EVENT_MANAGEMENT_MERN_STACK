@@ -33,7 +33,7 @@ const Contact = () => {
     try {
       console.log('Sending message data:', formData);
       
-      const response = await fetch(`${config.apiUrl}/api/v1/message`, {
+      const response = await fetch(`${config.apiUrl}/api/v1/message/send`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
