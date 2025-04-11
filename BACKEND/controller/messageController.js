@@ -3,41 +3,41 @@ import { Message } from "../models/messageSchema.js";
 export const sendMessage = async (req, res) => {
   try {
     const { name, email, subject, message } = req.body;
+    
+    console.log("Received message data:", { name, email, subject, message });
+    
     if (!name || !email || !subject || !message) {
+      console.log("Missing required fields");
       return res.status(400).json({
         success: false,
-        message: "All fields are required!",
-      });
-    }
-    await Message.create({ name, email, subject, message });
-    res.status(200).json({
-      success: true,
-      message: "Message Sent Successfully!",
-    });
-  } catch (error) {
-    if (error.name === "ValidationError") {
-      let errorMessage = "";
-      if (error.errors.name) {
-        errorMessage += error.errors.name.message + " ";
-      }
-      if (error.errors.email) {
-        errorMessage += error.errors.email.message + " ";
-      }
-      if (error.errors.subject) {
-        errorMessage += error.errors.subject.message + " ";
-      }
-      if (error.errors.message) {
-        errorMessage += error.errors.message.message + " ";
-      }
-      return res.status(400).json({
-        success: false,
-        message: errorMessage,
+        message: "Please fill all the fields",
       });
     }
 
-    return res.status(500).json({
+    const newMessage = await Message.create({
+      name,
+      email,
+      subject,
+      message,
+    });
+
+    console.log("Message saved successfully:", newMessage);
+
+    res.status(201).json({
+      success: true,
+      message: "Message sent successfully",
+      data: newMessage,
+    });
+  } catch (error) {
+    console.error("Error in sendMessage:", {
+      error: error.message,
+      stack: error.stack,
+      body: req.body
+    });
+    res.status(500).json({
       success: false,
-      message: "Unknown Error",
+      message: "Error sending message",
+      error: error.message,
     });
   }
 };
